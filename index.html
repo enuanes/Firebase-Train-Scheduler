@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Train Scheduler App</title>
+    <!-- Link to Bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Link to my CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron text-center">
+            <i class="fa fa-5x fa-train"></i>
+            <h1>Anytime Is Train Time</h1>
+            <h3>Choo Choo</h3>
+            <h5>Today is <span id="currentStatus"></span></h5>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="panel-group">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            Current Train Schedule
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th><strong>Train Name</strong></th>
+                                            <th><strong>Destination</strong></th>
+                                            <th><strong>Frequency (min)</strong></th>
+                                            <th><strong>Next Arrival</strong></th>
+                                            <th><strong>Minutes Away</strong></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="newTrain">
+                                        <tr>
+                                            <td>Pineapple Express</td>
+                                            <td>Honolulu</td>
+                                            <td>30</td>
+                                            <td>16:20</td>
+                                            <td>20</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-9">
+                <div class="panel-group">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Add Train</div>
+                        <form>
+                            <div class="container-fluid">
+                                <div class="form-group">
+                                    <label for="trainName">Train Name</label>
+                                    <input type="text" class="form-control" id="trainName" placeholder="Red Line"> 
+                                </div>
+                                <div class="form-group">
+                                    <label for="destination">Destination</label>
+                                    <input type="text" class="form-control" id="destination" placeholder="Santa Fe Depot">
+                                </div>
+                                <div class="form-group">
+                                    <label for="trainTime">First Train Time (HH:mm-military time)</label>
+                                    <input type="time" class="form-control" id="trainTime" placeholder="14:55">
+                                </div>
+                                <div class="form-group">
+                                    <label for="frequency">Frequency (mins)</label>
+                                    <input type="text" class="form-control" id="frequency" placeholder="20">
+                                </div>
+                                <button class="btn btn-primary" id="addTain" type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Link to jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<!-- Link to Firebase -->
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+<!-- Link to moment.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
+<!-- Link to my javascript file. -->
+<script type="text/javascript" src="assets/javascript/app.js"></script>
+</body>
+</html>
